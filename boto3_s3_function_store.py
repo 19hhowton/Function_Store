@@ -1,3 +1,5 @@
+"""Function store for boto3 to interact with AWS s3."""
+
 import boto3
 import uuid 
 
