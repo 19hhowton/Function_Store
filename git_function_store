@@ -1,0 +1,259 @@
+#change directory
+cd Desktop
+
+mkdir my-git-repos
+
+cd my-git-repos
+
+git clone https://github.com/19hhowton/noob-2.git
+
+ls
+
+cd noob-2
+
+ls
+
+code .
+# open VSCode with the currently focused directory of terminal
+
+git status
+
+git add stratch.py
+
+git status
+
+git commit -m "made new file called stratch.py"
+
+Note: "git push" to publish your local commits)
+
+git status
+
+git commit -a -m "added a second function call"
+
+git status
+
+git log
+
+git checkout -b crazy-idea-1
+# switched to a new branch crazy-idea-1
+
+git branch
+# shows the git branch you're in
+
+git checkout main
+
+git checkout crazy-idea-1
+
+git commit -a -m "Changed dunction to Good morning, not hi"
+
+... Not sure how to push to main in local machine
+... Not sure how to push main and crazy-idea-1 from local machine to github
+
+# print working directory
+$ pwd
+/c/Users/sharadaprasad
+
+# make new folder
+$ mkdir arg
+-ex-
+$ mkdir "my first commandline directory" #double or single quotes work
+$ mkdir my-first-commandline-directory
+$ mkdir my-first-commandline-directory
+Error: mkdir: cannot create directory ‘my-first-commandline-directory’: File exists
+
+# list files in directory
+$ ls
+$ ls -A #list files (and hidden) in directory 
+
+# change directory
+$ mkdir arg
+-ex-
+$ cd sharadaprasad\my-first-commandline-directory
+$ cd .. #parent directory (a go back button)
+
+# Create folder called .git inside cwd. 
+$ git init
+# ls -A to checkout the hiden folder
+
+# Tell git who you are
+$ git config --global user.name "19hhowton"
+$ git config --global user.email "19hhowton@gmail.com"
+
+# open VSCode
+$ code . 
+
+# commit work to git repo folder
+$ git add <file1> <file2> <etc>
+$ git commit -m "enter message"
+
+# git status
+$ git status
+
+# Make a branch
+$ git branch <file>
+
+# View branches in repo
+$ git branch
+
+# Switch branches
+$ git switch
+
+# Switch and create branch
+$ git switch -c my-first-branch
+
+# Merge tp the the main/proposer (must be switched into main)
+$ git merge <proposee>
+$ git merge <proposee> -m "Merge branch 'add-thurs-menu'"
+
+# How to get documentation to pop up
+$ git <command> --help
+$ git help <command>
+$ git <command> --h #shorter version
+
+# show latest commit memory location and message
+# relationship to upstream branch
+
+#
+$ git config --global core.editor "code -w"
+
+# How to delete branch
+$ git branch -d <branch>
+
+# What does this do?
+$ git branch -D <branch>
+
+# Undo accidental delete
+$ git branch <branch> <branch-commit-id>
+
+#  truncate commit id
+$ git log --abbrev-commit
+
+#  exclide info about author and date
+$ git log --pretty=oneline
+
+# exclide info about author and date AND truncate commit id
+$ git log --oneline
+
+#  display all commits as a graph
+$ git log --graph
+
+#  display commits of all branches in repo
+$ git log --all
+
+#  display commits of all branches in repo
+# a is index content. b is working directory
+$ git diff
+
+#  individual words differ rather than lines differgit 
+$ git diff --word-diff
+
+#  different tools to display diffs
+$ git diff --tool-help
+
+#  diff contents between last commit and index (like shifting over the commit)
+# a is object database. b is index content
+$ git diff --cached
+$ git diff --staged #same thing
+
+# diff between the last commits of two branches
+$ git diff <a-, taget_branch> <b+, source_branch2>
+
+git diff <commita> <commitb>
+
+# index moved back to working directory, overwriting the workdir
+# fun idea: check with git status
+# opposite of add
+$ git restore <file>
+$ git restore file-a file-b file-c #restore multiple files
+
+# overwrites content in index with last recorded commit
+# opposite of commit
+# not undoing the commit
+$ git restore --staged <file>
+
+# removes tracked files from working directory and index
+$ git rm <file>
+
+# removes tracked directory and files from w.d. and index
+# -r means recursive
+$ git rm -r <file> 
+
+# delete unrtacked files from directory
+-> file explorer
+
+# renames or moves tracked files from w.d. and index
+$ git mv <old-file-name> <new-file-name>
+
+# edit commit messages
+# must be on the same branch as the commit AND clean 
+# working directory (check with git status)
+$ git commit --amend
+
+# Change the name of a branch
+$ git branch -m <new branch name> # This works if in branch
+$ git branch -move <branch-current-name> <branch-new-name>
+
+# 
+$ git diff HEAD ~1
+$ git diff <> <>
+$ git diff HEAD ~1^1
+$ git diff HEAD ~1^2
+
+# moves head and branch to commit specified
+# Erase history (pencil and erase with math)
+$ git reset --soft HEAD~1 #moves back to index and copies to w.d. 
+# Like you never made a commit to begin with
+$ git reset --mixed HEAD~1
+$ git reset HEAD~1
+$ git reset --hard HEAD~1 #DESTRUCTIVE USE REVERT
+
+# creates new commit, keeps previous commit in the log, 
+# but that previous commit is now undone, with a clean working tree
+# Keep history (pen and x out with math - keep your errors :) )
+$ git revert HEAD
+
+##  Intialize repo on workstation 
+$ git init
+
+##  Intialize repo by cloning an existing repo 
+#
+$ git clone <URL>
+# Change name of folder AND clone
+$ git clone <URL> name-of-folder-you-want-to-give
+
+## Sync local changes with remote
+#
+$ git push 
+
+## Tell git to error out when you push
+$ git config --global push.default simple
+# confirm if changes stuck
+$ git config push.default
+
+## Configure credentials  
+# Once you're more experienced check this out
+$ credential.helper
+
+## Get the url of the origin of the git repo
+#
+$ git remote
+$ git remote -v
+>>> origin  https://github.com/19hhowton/working-with-remotes.git (fetch)
+>>> origin  https://github.com/19hhowton/working-with-remotes.git (push)
+
+## Push a local branch
+# Why specify origin? You need to tell which remote to push through
+$ git push #not suggested but seams to work
+$ git push --set-upstream origin <feature_branch_name>
+$ git push --su origin <feature_branch_name>
+
+## 
+#
+$
+
+## Git add and commit in one command using aliases
+#
+$ git config --global alias.add-commit '!git add -A && git commit'
+$ git add-commit -m 'My commit message'
+# unset the alias (your alias is <ac>)
+$ git config --global --unset alias.<your_alias>
