@@ -1,90 +1,67 @@
-#change directory
-cd Desktop
+#### SETTING UP ####
+##	Displays the path of the current directory.
+pwd 
 
+## Change directory
+cd <path>
+# Parent directory (a go back button)
+cd .. 
+
+## Create a new folder in the current directory
 mkdir my-git-repos
 
-cd my-git-repos
-
-git clone https://github.com/19hhowton/noob-2.git
-
-ls
-
-cd noob-2
-
-ls
-
-code .
-# open VSCode with the currently focused directory of terminal
-
-git status
-
-git add stratch.py
-
-git status
-
-git commit -m "made new file called stratch.py"
-
-Note: "git push" to publish your local commits)
-
-git status
-
-git commit -a -m "added a second function call"
-
-git status
-
-git log
-
-git checkout -b crazy-idea-1
-# switched to a new branch crazy-idea-1
-
-git branch
-# shows the git branch you're in
-
-git checkout main
-
-git checkout crazy-idea-1
-
-git commit -a -m "Changed dunction to Good morning, not hi"
-
-... Not sure how to push to main in local machine
-... Not sure how to push main and crazy-idea-1 from local machine to github
-
-# print working directory
-$ pwd
-/c/Users/sharadaprasad
-
-# make new folder
-$ mkdir arg
--ex-
-$ mkdir "my first commandline directory" #double or single quotes work
-$ mkdir my-first-commandline-directory
-$ mkdir my-first-commandline-directory
-Error: mkdir: cannot create directory ‘my-first-commandline-directory’: File exists
-
-# list files in directory
-$ ls
-$ ls -A #list files (and hidden) in directory 
-
-# change directory
-$ mkdir arg
--ex-
-$ cd sharadaprasad\my-first-commandline-directory
-$ cd .. #parent directory (a go back button)
-
-# Create folder called .git inside cwd. 
+##  Intialize repo on workstation 
 $ git init
-# ls -A to checkout the hiden folder
 
-# Tell git who you are
+##  Intialize repo by cloning an existing repo  using the HTTPS
+#
+$ git clone <URL>
+# Change name of folder AND clone
+$ git clone <URL> name-of-folder-you-want-to-give
+
+## After Tell git who you are
 $ git config --global user.name "19hhowton"
 $ git config --global user.email "19hhowton@gmail.com"
 
-# open VSCode
-$ code . 
+## After cloning, see if the file is added, move to your cloned file, check to see what's in the file 
+$ ls
+$ cd noob-2
+$ ls
 
-# commit work to git repo folder
-$ git add <file1> <file2> <etc>
+## See “all” files and folders (including hidden ones)
+$ ls -A
+
+## Open VSCode with the currently focused directory of terminal
+$ code .
+
+
+
+#### MAKING CHANGES TO YOUR GIT REPO ON YOUR MACHINE  ####
+## Check the status 
+$ git status
+
+## Commit work to git repo folder
 $ git commit -m "enter message"
+
+## Add a file
+$ git add <file1> <file2> <etc>
+
+## Commit changes
+$ git commit -m "made new file called stratch.py"
+
+
+
+#### BRANCHES ####
+# switched to a new branch crazy-idea-1
+$ git checkout -b crazy-idea-1
+
+$ git checkout main
+
+## Shows the git branch you're in
+$ git branch
+
+## lists all the commits in the current branch, with the latest commit at the top, followed by its parent, and so on
+$ git log
 
 # git status
 $ git status
@@ -110,12 +87,7 @@ $ git <command> --help
 $ git help <command>
 $ git <command> --h #shorter version
 
-# show latest commit memory location and message
-# relationship to upstream branch
-
-#
-$ git config --global core.editor "code -w"
-
+#### BRANCH DANGER ZONE ####
 # How to delete branch
 $ git branch -d <branch>
 
@@ -124,6 +96,11 @@ $ git branch -D <branch>
 
 # Undo accidental delete
 $ git branch <branch> <branch-commit-id>
+
+
+
+#### LOG ####
+$ git log
 
 #  truncate commit id
 $ git log --abbrev-commit
@@ -140,6 +117,9 @@ $ git log --graph
 #  display commits of all branches in repo
 $ git log --all
 
+
+
+#### DIFF ####
 #  display commits of all branches in repo
 # a is index content. b is working directory
 $ git diff
@@ -212,17 +192,10 @@ $ git reset --hard HEAD~1 #DESTRUCTIVE USE REVERT
 # Keep history (pen and x out with math - keep your errors :) )
 $ git revert HEAD
 
-##  Intialize repo on workstation 
-$ git init
 
-##  Intialize repo by cloning an existing repo 
-#
-$ git clone <URL>
-# Change name of folder AND clone
-$ git clone <URL> name-of-folder-you-want-to-give
 
-## Sync local changes with remote
-#
+#### PUSH ####
+## Sync local changes with remote and publish your local commits
 $ git push 
 
 ## Tell git to error out when you push
@@ -230,12 +203,7 @@ $ git config --global push.default simple
 # confirm if changes stuck
 $ git config push.default
 
-## Configure credentials  
-# Once you're more experienced check this out
-$ credential.helper
-
 ## Get the url of the origin of the git repo
-#
 $ git remote
 $ git remote -v
 >>> origin  https://github.com/19hhowton/working-with-remotes.git (fetch)
@@ -247,10 +215,28 @@ $ git push #not suggested but seams to work
 $ git push --set-upstream origin <feature_branch_name>
 $ git push --su origin <feature_branch_name>
 
-## 
-#
-$
 
+
+#### GIT CONFIG ####
+## Set our email
+$ git config --global user.name "19hhowton"
+$ git config --global user.email "19hhowton@gmail.com"
+
+## Set our default editor
+$ git config --global core.editor "code -w"
+
+## Set Git’s behavior when it comes to pushing branches
+## Tell git to error out when you push
+$ git config --global push.default simple
+# confirm if changes stuck
+$ git config push.default
+
+## Configure credentials  
+$ credential.helper
+
+
+
+#### ALIASES ####
 ## Git add and commit in one command using aliases
 #
 $ git config --global alias.add-commit '!git add -A && git commit'
