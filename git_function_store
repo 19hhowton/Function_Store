@@ -201,6 +201,7 @@ $ git revert HEAD
 
 #### PUSH ####
 ## Sync local changes with remote and publish your local commits
+# The first time will request username and password (personal access token)
 $ git push 
 
 ## Tell git to error out when you push
