@@ -87,6 +87,8 @@ $ git <command> --help
 $ git help <command>
 $ git <command> --h #shorter version
 
+
+
 #### BRANCH DANGER ZONE ####
 # How to delete branch
 $ git branch -d <branch>
@@ -140,6 +142,9 @@ $ git diff <a-, taget_branch> <b+, source_branch2>
 
 git diff <commita> <commitb>
 
+
+
+#### COMMIT/ADD DANGER ZONE ####
 # index moved back to working directory, overwriting the workdir
 # fun idea: check with git status
 # opposite of add
@@ -233,6 +238,9 @@ $ git config push.default
 
 ## Configure credentials  
 $ credential.helper
+
+## After I cloned a repo, I got this.
+ git config --global --add safe.directory P:/CSpCloud/H_Workspace/GitHuFunction_Store
 
 
 
