@@ -1,1 +1,92 @@
 
+#### Excel
+# if an excel file you need to install xlwt, or xlrd, etc. 
+# xlwt, write only, .xls
+# xlrd, read only. .xls
+# openpyxl, write and read, .xlsx
+# XlsxWriter, write only, .xlsx
+## Save data
+df.to_excel("file")
+## Load data into pythons
+df_xlsx = pd.read_excel("File", ...)
+
+
+
+
+#### CSV
+## Save DataFrame to a CSV
+# path_or_budd includes file name and extention. If no file given, you will create a string that can store in variable
+csv_str = df.to_csv()
+# 
+df.to_csv("file", index=False)
+# to change nan to something else to fill
+df.to_csv("file", na_rep='(missing)')
+# save date format you want (if you have a dtype datetime)
+data_types.to_csv('file', date_format='%B %d %Y')
+# sep
+df.to_csv("file", sep=';')
+# decimal
+
+# encoding
+# header, data represented without the header row
+df.to_csv("file", header=False)
+
+## Load data into python
+# if cvs files contains row labels/index, index_col specifies the column of the index to avoid loading index column as data
+csv_df = pd.read_csv("file", index_col=0)
+# When pandas reads the file, (missing) will be interpreted as NAN
+new_data_nan = pd.read_csv("file", index_col=0, na_values='(missing)')
+# force data times
+data_types = pd.read_csv('file', index_col=0, parse_dates=['col4'])
+# force a different type
+dtypes={'col1':'float32','col2':'float32','col3':'float32'}
+data_types = pd.read_csv('file', index_col=0, dtype=dtypes)
+
+## Data interpretation
+# see the data type of each column
+new_data_nan.dtype
+# Change datatype
+df.astype(dtype={})
+
+## Make a series of a column
+# return a series object of column's data, which extracts index and data
+col1 = df['col1']
+ # this only works if its a noncomplicated column name (not py-score)
+col1 = df.col1
+
+# View the index 
+col1.index
+# Find index in index column
+df.index[0]
+# Change index
+df.index = np.arange(10,17)
+
+# View column labels
+df.columns
+# Find column in columns 
+# returns name of first column
+df.columns[0]
+
+# View the values, return numpy array
+df.values
+## Find a value 
+# knowing the row and column name
+df.loc['RUS','CONT']
+
+
+# View row
+
+## Find a value of an index an index column
+
+
+
+
+## Find a row
+# if dataframe
+df.loc[103]
+# if a series
+col1[103]
+
+## Data manipulation
+
+
