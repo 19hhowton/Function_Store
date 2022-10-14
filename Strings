@@ -1,0 +1,247 @@
+
+
+def str_methods(str):
+    # changes everything so only first letter capitalized
+    # print(str.capitalize()) 
+
+    # lowercase everything for different languages 
+    # print(str.casefold()) 
+
+    # len(str)-width, so 11-7=4 so two on each side. Default filler is a space.
+    # print(str.center(11, '-'))  
+
+    # Return the number of non-overlapping occurrences of substring
+    # str.count(sub[, start[, end]]))
+    # print(str.count('heat', 0, -1))
+
+    # Return an encoded version of the string as a bytes object.
+    # str.encode(encoding='utf-8', errors='strict')
+    # str = 'My name is ಅಮ್ಮ'
+    # print(str.encode(encoding='utf-8', errors='strict'))
+    
+    # Return True if the string ends with the specified suffix, can also be a tuple of suffixes 
+    # str.endswith(suffix[, start[, end]])
+    # str = 'Its correct to end with period!'
+    # print(str.endswith(('.','!'),0,))
+
+    # Return consitant distances. Perfect for those silly, simple python tables. Default is 8.
+    # str.expandtabs(tabsize=4) 
+    # str = '01\t012\t0123\t01234'
+    # print(str.expandtabs(tabsize=8))
+    # print(len('0123    '))
+
+    # Return the index of the earliest occurance in the string. Return -1 if sub is not found.
+    # str.find(sub[, start[, end]])
+    # str = 'heatherheather'
+    # print(str.find('heatt',0,))
+
+    # Return Like find(), but raise ValueError when the substring is not found.
+    # print(str.index(sub[, start[, end]]))
+    # str = 'heatherheather'
+    # print(str.index('heatt',0,))
+    
+    # Returns contain literal text or replacement fields. From variables, better alernative option to to f'{}'.
+    # str.format(*args, **kwargs)
+    # user = 'sharadaprasad'
+    # pas = 'Log123!'
+    # num = 123
+    # amma1 = 'ಅಮ್ಮ'
+    # amma = '\xe0\xb2\x85\xe0\xb2\xae\xe0\xb3\x8d\xe0\xb2\xae'
+    # print("The username you're looking for is {name:} and {paswrd:}.".format(name = user, paswrd = pas))
+    # print("The username you're looking for is {} and {}.".format(user,pas))
+    # print('This will cost {:.2f}'.format(num))
+    # print('This will cost {:d}'.format(num))
+
+    # Returns from (not variables like .format, but dict) 
+    # str.format_map(mapping_to_dictionary_name)
+    # dict_name = {'first':'Heather', 'last':'Howton'}
+    # print("{first}'s last name is {last}".format_map(dict_name))
+    # # in case there is an empty key.
+    # class Default(dict):
+    #     def __missing__(self, key):
+    #         return key
+    # print('{name} was born in {country}'.format_map(Default(name='Guido')))
+    # # many layers
+    # secnd_floor = { 'name':['Heather', 'Sharada'], 'profession':['Analyst', 'Consultant']}
+    # print('{name[0]} is an {profession[0]} and she'
+    #   ' is married to {name[1]}.'.format_map(secnd_floor))
+
+    # Return True if all characters in the string are alphanumeric and there is at least one character
+    # print(str.isalnum())
+    # str = '!@#'
+    # str1 = '123'
+    # str2 = 'heather'
+    # print(str.isalnum())
+    # print(str1.isalnum())
+    # print(str2.isalnum())
+    
+    # Return True if all characters in the string are alphabetic and there is at least one character,
+    # print(str.isalpha())
+    # str = ''
+    # str1 = '123'
+    # str2 = 'heather'
+    # print(str.isalpha())
+    # print(str1.isalpha())
+    # print(str2.isalpha())
+
+    # MORE
+    # print(str.isdecimal())
+    # print(str.isdigit())
+    # print(str.isnumeric())
+    # print(str.isspace())
+    # print(str.istitle())
+    # print(str.islower())
+    # print(str.isupper())
+
+    # Return True if the string is empty or all characters in the string are ASCII.
+    # ASCII uses numbers from 0 to 127 to represent English characters.
+    # print(str.isascii())
+    # str = 'ABC'
+    # str1 = '/u0000' # Unicode of Null
+    # str3 = 'ß'   # German letter
+    # print(str.isascii())
+    # print(str1.isascii())
+    # print(str2.isascii())
+    # print(str3.isascii())
+
+    # Returns True if the string is a valid identifier, otherwise False.
+    # A string is considered a valid identifier if it only contains alphanumeric 
+    # letters (a-z) and (0-9), or underscores (_). A valid identifier cannot start 
+    # with a number, or contain any spaces. 
+    # Basically if it can be a variable name it's an identifier
+    # print(str.isidentifier())
+    # a = "2bring"
+    # b = "my demo"
+    # c = "Demo002"
+    # print(a.isidentifier())
+    # print(b.isidentifier())
+    # print(c.isidentifier())
+
+    # Returns True if all in string are printable. A non-printable character can be carriage return (\r) and line feed(\n).
+    # print(str.isprintable())
+    # print("Hello!\nAre you #1?")
+
+    # Return a string which is the concatenation of the strings in iterable. 
+    # A TypeError will be raised if there are any non-string values in iterable,
+    # An iterable is what is joined, is a Native data type: List, Tuple, String, Dictionary and Set.
+    # The str is what the iterable is seperated by
+    # print(str.join(iterable))
+    # text = ['Python', 'is', 'a', 'fun', 'programming', 'language']
+    # print(' '.join(text))
+    # s1 = 'abc'
+    # s2 = '123'
+    # print('s1.join(s2):', s1.join(s2))
+
+    # Return the string left justified in a string of length width.
+    # Will tack on a bunch of stuff to the right of your string. 
+    # print(str.ljust(width[, fillchar]))
+    # str = 'banana'.ljust(20, "O")
+    # print(str)
+    # # You can add in the middle.
+    # print(str, 'is my favorite fruit.')
+    
+    # Return Split the string at the first occurrence of sep, and return a 
+    # 3-tuple containing the part before the separator, the separator itself
+    # print(str.partition(sep))
+    # print("I could eat bananas all day".partition("bananas"))
+    # print("I could eat bananas all day".partition("apples"))
+    
+    # Return a copy of the string with leading characters removed, any combo. defaults to removing whitespace.
+    # Great for removing preceeding gibberish. 
+    # print(str.lstrip([chars]))
+    # print('   spacious   '.lstrip(),'fish')
+    # print('   spacious   '.strip(),'fish')
+    # #any combo of lstrip(...) is removed until one interuption 'b' for example below
+    # print(",,,,,ssaaww.....banana".lstrip(",.asw"))
+    # print('Arthur: three!'.lstrip('Arthur: '))
+    # #to avoid, use this
+    
+    # Return string[len(prefix):]
+    # print(str.removeprefix(prefix, /))
+    # print('Arthur: three!'.removeprefix('Arthur: '))
+    
+    # Return string[:-len(suffix)]
+    # # print(str.removesuffix(suffix, /))
+    # print('MiscTests'.removesuffix('Tests'))
+    # print('1234'.removesuffix('4'))
+    
+    # Return old replaced with new. If count is given, only first count occurrences are replaced.
+    # print(str.replace(old, new[, count]))
+    # print("one one was a race horse, two two was one too.".replace("one", "three", 2))
+    # print("one one was a race horse, two two was one too.".replace("one", "three",))
+    
+    # Return the index of the earliest occurance in the string. Return -1 if sub is not found.
+    # print(str.rfind(sub[, start[, end]]))
+    # str = 'heatherheather'
+    # print(str.find('heatt',0,))
+    
+    # Return Like rfind() but raises ValueError when the substring sub is not found.
+    # print(str.rindex(sub[, start[, end]]))
+    
+    # Return the string right justified in a string of length width.
+    # print(str.rjust(width[, fillchar]))
+    
+    # Return Split the string at the **last** occurrence of sep
+    # print(str.rpartition(sep))
+
+    # Return
+    # print(str.rsplit(sep=None, maxsplit=- 1))
+    
+    # Return
+    # print(str.rstrip([chars]))
+    
+    # Return
+    # print(str.split(sep=None, maxsplit=- 1))
+    
+    # Return
+    # print(str.splitlines(keepends=False))
+    
+    # Return
+    # print(str.startswith(prefix[, start[, end]]))
+    
+    # Return
+    # print(str.strip([chars]))
+    
+    # Return
+    # print(str.swapcase())
+
+    # Return a Unicode representation of each character for translation.
+    # Great for changing words consistently messed up.
+    # print(str.maketrans(x[, y[, z]]))
+    # print(str.translate(table))
+    # str = 'Most'
+    # mappingtbl = str.maketrans('M','H')
+    # newstr = str.translate(mappingtbl) # pass mapping table in translate()
+    # print(mappingtbl, newstr)
+    # # x an y
+    # str = 'Most'
+    # mappingtbl = str.maketrans('Mts','Hdl') # x and y must be the same length
+    # newstr = str.translate(mappingtbl) # pass mapping table in translate()
+    # print(mappingtbl, newstr)
+    # # dict
+    # str = 'Most'
+    # mapdict = {'M': 72, 's':None}
+    # mappingtbl = str.maketrans(mapdict)
+    # newstr = str.translate(mappingtbl) # pass mapping table in translate()
+    # print(mappingtbl, newstr)
+    # #you can specify an actual character
+    # str = 'Most'
+    # mapdict = {'M': 'H', 's': 'l', 't':'d'}
+    # mappingtbl = str.maketrans(mapdict)
+    # newstr = str.translate(mappingtbl) # pass mapping table in translate()
+    # print(mappingtbl, newstr)
+    
+    # Return a copy of the string left filled with ASCII '0' digits to make a string of length width.
+    # print(str.zfill(width)) 
+    print("42".zfill(5))
+
+    # OTHERS
+    # print(str.lower())
+    # print(str.upper())
+    # print(str.title())
+    
+    
+    
+
+word = 'heather'
+str_methods(word)
