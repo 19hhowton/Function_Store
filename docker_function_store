@@ -1,0 +1,92 @@
+                                       #### Basic Commands
+
+Type the following Docker commands:
+
+## Displays system information
+
+    docker info
+
+## Displays the system’s version
+
+    docker version
+
+## Log in to Docker Hub
+
+    docker login
+    
+                                      #### Running Containers
+                                      
+                                    
+
+## Pull (download image from a registry)
+
+  docker pull [image-name]
+  
+# Run containers (excecute an image in memeory as a container. If not in cache, it will be downloaded automatically)
+
+  docker run [image-name]
+  
+# Run containers - detached mode (run in background giving terminal back)
+
+  docker run -d [image-name]
+  
+# Set limits on memory or CPU
+    docker run --memory="256m" nginx
+    docker run --cpus=".5" nginx
+  
+## Start stopped containers 
+
+    docker start [containerName]
+    
+## List the running and stopped containers
+
+    docker ps -a     
+    
+## Kill container stuck in memory 
+
+    docker kill [containerName]
+
+## Inspects an image (useful for debugging)
+
+    docker images inspect [containerName]  
+    
+## Stop container
+
+    docker stop [containerName]
+
+## Remove the image
+
+    docker rmi nginx
+    
+                                      #### Running Containers - Used 
+
+## Pull and run a Nginx server
+
+    docker run -d -p 8080:80 --name webserver nginx
+    
+## List the running containers
+
+    docker ps
+
+## List the images
+
+    docker images
+
+## Attach to the container (will return the container id: root@31251d56e35b:/#)
+
+    docker container exec -it  webserver bash 
+    
+Exit Bash by typing
+
+    exit
+
+## Stop the container
+
+    docker stop webserver
+
+## Remove the container from memory
+
+    docker rm webserver
+
+    
+
