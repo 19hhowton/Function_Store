@@ -30,3 +30,12 @@ if __name__ == "__main__":
 
     logger.info("Ending HelloSpark")
     # spark.stop()
+    
+   
+# To collect or show? 
+    # collect vs. show
+    # show methods is a utility function that prints the dataframe to the console
+    # count_df.show()
+    # collect returns the data as a python list
+    # logger.info will also show the data in the logs file??? CHeck this later
+    # logger.info(count_df.collect())
