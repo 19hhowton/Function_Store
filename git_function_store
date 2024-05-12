@@ -34,7 +34,16 @@ $ ls -A
 ## Open VSCode with the currently focused directory of terminal
 $ code .
 
-
+### Adding a repository from your local computer to GitHub ###
+$ git init -b main
+$ git init && git symbolic-ref HEAD refs/heads/main
+$ git add .
+$ git commit -m "First commit"
+Create a new repository on GitHub.com. 
+click  to copy the remote repository URL.
+$ git remote add origin REMOTE-URL 
+$ git remote -v
+$ git push origin main/master
 
 #### MAKING CHANGES TO YOUR GIT REPO ON YOUR MACHINE  ####
 ## Check the status 
